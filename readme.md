@@ -10,9 +10,11 @@ I was using podman play kube quite a bit and was getting tired of the verbose st
 
 NOTE: podman 3 is required to be installed on the system for this to work.
 
+```
 git clone github.com/bamsy/podman-play
 cd podman-play
 go build .
+```
 
 ## Example
 

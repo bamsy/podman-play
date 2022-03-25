@@ -32,13 +32,11 @@ func init() {
 }
 
 func downService(kubeYaml string) {
-	fmt.Println(kubeYaml)
-
 	// Start the service using the kube yaml file passed in
 	cmd := exec.Command("podman", "play", "kube", kubeYaml, "--down")
-	stdout, err := cmd.Output()
+	stdout, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(string(stdout))
 		return
 	}
 	fmt.Println(string(stdout))

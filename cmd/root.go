@@ -17,8 +17,8 @@ const DEFAULT_KUBE_YAML = "kube.yaml"
 var rootCmd = &cobra.Command{
 	Use:   "podman-play",
 	Short: "A wrapper around the 'podman play kube' to work similar to docker-compose",
-	Long: `Commands supported:
-	- podman-play up -> Will start your pod using a passed in kube.yaml. #TODO pick default yaml file
+	Long: `If a file is not passed in "kube.yaml" is used by default. Commands supported:
+	- podman-play up -> Will start your pod using a passed in kube.yaml. 
 	- podman-play down -> Will stop and your service using a passed in kube.yaml.
 	- podman-play pull -> Will pull down any images in a passed in kube.yaml file.`,
 	// Uncomment the following line if your bare application

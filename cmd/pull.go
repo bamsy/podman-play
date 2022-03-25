@@ -59,9 +59,9 @@ func pullImages(kubeYaml string) {
 func pullImage(image string) {
 	fmt.Printf("pulling image %s\n", image)
 	cmd := exec.Command("podman", "pull", image)
-	stdout, err := cmd.Output()
+	stdout, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(string(stdout))
 		return
 	}
 	fmt.Println(string(stdout))
